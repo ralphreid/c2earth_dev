@@ -4,6 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-FatFreeCRM::Application.load_tasks
-
-task :default => ['spec']
+C2earthDev::Application.load_tasks

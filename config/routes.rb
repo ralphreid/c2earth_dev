@@ -1,199 +1,58 @@
-# Copyright (c) 2008-2013 Michael Dvorkin and contributors.
-#
-# Fat Free CRM is freely distributable under the terms of MIT license.
-# See MIT-LICENSE file or http://www.opensource.org/licenses/mit-license.php
-#------------------------------------------------------------------------------
-Rails.application.routes.draw do
-  resources :lists
+C2earthDev::Application.routes.draw do
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
 
-  root :to => 'home#index'
+  # Sample of regular route:
+  #   match 'products/:id' => 'catalog#view'
+  # Keep in mind you can assign values other than :controller and :action
 
-  match 'activities' => 'home#index'
-  match 'admin'      => 'admin/users#index',       :as => :admin
-  match 'login'      => 'authentications#new',     :as => :login
-  match 'logout'     => 'authentications#destroy', :as => :logout
-  match 'profile'    => 'users#show',              :as => :profile
-  match 'signup'     => 'users#new',               :as => :signup
+  # Sample of named route:
+  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  # This route can be invoked with purchase_url(:id => product.id)
 
-  match '/home/options',  :as => :options
-  match '/home/toggle',   :as => :toggle
-  match '/home/timeline', :as => :timeline
-  match '/home/timezone', :as => :timezone
-  match '/home/redraw',   :as => :redraw
+  # Sample resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
 
-  resource  :authentication, :except => [:index, :edit]
-  resources :comments,       :except => [:new, :show]
-  resources :emails,         :only   => [:destroy]
-  resources :passwords,      :only   => [:new, :create, :edit, :update]
+  # Sample resource route with options:
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
 
-  resources :accounts, :id => /\d+/ do
-    collection do
-      get  :advanced_search
-      post :filter
-      get  :options
-      get  :field_group
-      match :auto_complete
-      get  :redraw
-      get  :versions
-    end
-    member do
-      put  :attach
-      post :discard
-      post :subscribe
-      post :unsubscribe
-      get  :contacts
-      get  :opportunities
-    end
-  end
+  # Sample resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
 
-  resources :campaigns, :id => /\d+/ do
-    collection do
-      get  :advanced_search
-      post :filter
-      get  :options
-      get  :field_group
-      match :auto_complete
-      get  :redraw
-      get  :versions
-    end
-    member do
-      put  :attach
-      post :discard
-      post :subscribe
-      post :unsubscribe
-      get  :leads
-      get  :opportunities
-    end
-  end
+  # Sample resource route with more complex sub-resources
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', :on => :collection
+  #     end
+  #   end
 
-  resources :contacts, :id => /\d+/ do
-    collection do
-      get  :advanced_search
-      post :filter
-      get  :options
-      get  :field_group
-      match :auto_complete
-      get  :redraw
-      get  :versions
-    end
-    member do
-      put  :attach
-      post :discard
-      post :subscribe
-      post :unsubscribe
-      get  :opportunities
-    end
-  end
+  # Sample resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
 
-  resources :leads, :id => /\d+/ do
-    collection do
-      get  :advanced_search
-      post :filter
-      get  :options
-      get  :field_group
-      match :auto_complete
-      get  :redraw
-      get  :versions
-      get  :autocomplete_account_name
-    end
-    member do
-      get  :convert
-      post :discard
-      post :subscribe
-      post :unsubscribe
-      put  :attach
-      put  :promote
-      put  :reject
-    end
-  end
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  # root :to => 'welcome#index'
 
-  resources :opportunities, :id => /\d+/ do
-    collection do
-      get  :advanced_search
-      post :filter
-      get  :options
-      get  :field_group
-      match :auto_complete
-      get  :redraw
-      get  :versions
-    end
-    member do
-      put  :attach
-      post :discard
-      post :subscribe
-      post :unsubscribe
-      get  :contacts
-    end
-  end
+  # See how all your routes lay out with "rake routes"
 
-  resources :tasks, :id => /\d+/ do
-    collection do
-      post :filter
-      match :auto_complete
-    end
-    member do
-      put  :complete
-    end
-  end
-
-  resources :users, :id => /\d+/, :except => [:index, :destroy] do
-    member do
-      get  :avatar
-      get  :password
-      put  :upload_avatar
-      put  :change_password
-      get  :redraw
-    end
-    collection do
-      get  :opportunities_overview
-      match :auto_complete
-    end
-  end
-
-  namespace :admin do
-    resources :groups
-
-    resources :users do
-      collection do
-        match :auto_complete
-      end
-      member do
-        get :confirm
-        put :suspend
-        put :reactivate
-      end
-    end
-
-    resources :field_groups, :except => [:index, :show] do
-      collection do
-        post :sort
-      end
-      member do
-        get :confirm
-      end
-    end
-
-    resources :fields do
-      collection do
-        match :auto_complete
-        get   :options
-        get   :redraw
-        post  :sort
-        get   :subform
-      end
-    end
-
-    resources :tags, :except => [:show] do
-      member do
-        get :confirm
-      end
-    end
-
-    resources :fields, :as => :custom_fields
-    resources :fields, :as => :core_fields
-
-    resources :settings, :only => :index
-    resources :plugins,  :only => :index
-  end
-
+  # This is a legacy wild controller route that's not recommended for RESTful applications.
+  # Note: This route will make all actions in every controller accessible via GET requests.
+  # match ':controller(/:action(/:id))(.:format)'
 end

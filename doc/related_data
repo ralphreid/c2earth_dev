@@ -1,0 +1,84 @@
+###########################################################
+# Site
+###########################################################
+number:
+address:
+city:
+county:
+loc_page:						# what does this mean...can i change to loc_
+loc_longitude:
+loc_latitude:
+
+###########################################################
+# Client - can be many
+###########################################################
+
+name:
+address:
+city:
+state:
+zip:
+work_phone:
+home_phone:
+cell_phone:
+fax_phone:
+email:
+address_alternate:
+city_alternate:
+state_alternate:
+zip_alternate:
+work_phone_alternate:
+home_phone_alternate:
+cell_phone_alternate:
+fax_phone_alternate:
+email_alternate:
+notes:
+type:
+
+###########################################################
+# Stakeholder - can be many
+###########################################################
+
+stakeholder_company_id:
+name:
+info:
+
+###########################################################
+# Stakeholder Company info
+###########################################################
+
+stakeholder_company_type_id:
+company_name:
+contact:
+address:
+city:
+state:
+zip:
+phone:
+fax:
+email:
+website:
+notes:   *** not the same as 'ImsNotes' ---- new field
+
+###########################################################
+# Stakeholder Company Type
+###########################################################
+
+stakeholder_company_type:
+
+here is the list of company types
+	insurance
+	structural
+	civil
+	survey
+	architect
+	attorney
+	realestate buyer
+	realestate seller
+
+
+
+
+
+
+

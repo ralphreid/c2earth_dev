@@ -1,70 +1,70 @@
 ###########################################################
 # Site
 ###########################################################
-number:
-address:
-city:
-county:
-loc_page:						# what does this mean...can i change to loc_
-loc_longitude:
-loc_latitude:
+number:string					# assumed this is more like a string number but may be better as a number
+address:string
+city:string
+county:string
+loc_page:txt					# what does this mean...can i change to loc_
+loc_longitude:decimal
+loc_latitude:decimal
 
 ###########################################################
 # Client - can be many
 ###########################################################
 
-name:
-address:
-city:
-state:
-zip:
-work_phone:
-home_phone:
-cell_phone:
-fax_phone:
-email:
-address_alternate:
-city_alternate:
-state_alternate:
-zip_alternate:
-work_phone_alternate:
-home_phone_alternate:
-cell_phone_alternate:
-fax_phone_alternate:
-email_alternate:
-notes:
-type:
+name:string
+address:string
+city:string
+state:string
+zip:integer
+work_phone:string
+home_phone:string
+cell_phone:string
+fax_phone:string
+email:string
+address_alternate:string
+city_alternate:string
+state_alternate:string
+zip_alternate:integer
+work_phone_alternate:string
+home_phone_alternate:string
+cell_phone_alternate:string
+fax_phone_alternate:string
+email_alternate:string
+notes:text
+type:string													# should this be some type of list
 
 ###########################################################
 # Stakeholder - can be many
 ###########################################################
 
-stakeholder_company_id:
-name:
-info:
+stakeholder_company_id:integer
+name:string
+info:text
 
 ###########################################################
 # Stakeholder Company info
 ###########################################################
 
-stakeholder_company_type_id:
-company_name:
-contact:
-address:
-city:
-state:
-zip:
-phone:
-fax:
-email:
-website:
-notes:   *** not the same as 'ImsNotes' ---- new field
+stakeholder_company_type_id:integer
+company_name:string
+contact:string
+address:string
+city:string
+state:string
+zip:integer
+phone:string
+fax:string
+email:string
+website:text
+notes:text			   *** not the same as 'ImsNotes' ---- new field
 
 ###########################################################
 # Stakeholder Company Type
 ###########################################################
 
-stakeholder_company_type:
+stakeholder_company_type:string
 
 here is the list of company types
 	insurance

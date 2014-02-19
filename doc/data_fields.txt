@@ -2,40 +2,40 @@
 # Core related data elements
 ###########################################################
 
-project_number_id:
-project_manager_id:
-structure_type_id:
-project_prefix_id:
-investigation_type_id:
-fault_id:
-vendor_id:
-client_type_id:
-insurance_company_id:
-client_id:
-site_id:
-stakeholder_id:
+project_number_id:integer
+project_manager_id:integer
+structure_type_id:integer
+project_prefix_id:integer
+investigation_type_id:integer
+fault_id:integer
+vendor_id:integer
+client_type_id:integer
+insurance_company_id:integer
+client_id:integer
+site_id:integer
+stakeholder_id:integer
 
 ###########################################################
 # Core data elements
 ###########################################################
 
-name:
-name_alternate:
-description:
-proposal_date:
-proposal_number:
-report_date:
-notes:
+name:string
+name_alternate:string
+description:text
+proposal_date:date
+proposal_number:string					# assumed this is more like a string number but may be better as a number
+report_date:date									
+notes:string										# assumed this is more like a string number but may be better as a number
 insurance_policy_number:
-insurance_notes:  							# extrapolated from 'ImsNotes'
+insurance_notes:text  					# extrapolated from 'ImsNotes'
 
-bill_name:
-bill_attention:
-bill_address:
-bill_city:
-bill_state:
-bill_zip:
-bad_pay_history:
+bill_name:string
+bill_attention:string
+bill_address:string
+bill_city:string
+bill_state:string
+bill_zip:string
+bad_pay_history:text
 
 
 ###########################################################

@@ -1,0 +1,73 @@
+%h1 Listing projects
+
+%table
+  %tr
+    %th Project number
+    %th Project manager
+    %th Structure type
+    %th Project prefix
+    %th Investigation type
+    %th Fault
+    %th Vendor
+    %th Client type
+    %th Insurance company
+    %th Client
+    %th Site
+    %th Stakeholder
+    %th Name
+    %th Name alternate
+    %th Description
+    %th Proposal date
+    %th Proposal number
+    %th Report date
+    %th Notes
+    %th Insurance policy number
+    %th Insurance notes
+    %th Bill name
+    %th Bill attention
+    %th Bill address
+    %th Bill city
+    %th Bill state
+    %th Bill zip
+    %th Bad pay history
+    %th
+    %th
+    %th
+
+  - @projects.each do |project|
+    %tr
+      %td= project.project_number_id
+      %td= project.project_manager_id
+      %td= project.structure_type_id
+      %td= project.project_prefix_id
+      %td= project.investigation_type_id
+      %td= project.fault_id
+      %td= project.vendor_id
+      %td= project.client_type_id
+      %td= project.insurance_company_id
+      %td= project.client_id
+      %td= project.site_id
+      %td= project.stakeholder_id
+      %td= project.name
+      %td= project.name_alternate
+      %td= project.description
+      %td= project.proposal_date
+      %td= project.proposal_number
+      %td= project.report_date
+      %td= project.notes
+      %td= project.insurance_policy_number
+      %td= project.insurance_notes
+      %td= project.bill_name
+      %td= project.bill_attention
+      %td= project.bill_address
+      %td= project.bill_city
+      %td= project.bill_state
+      %td= project.bill_zip
+      %td= project.bad_pay_history
+      %td= link_to 'Show', project
+      %td= link_to 'Edit', edit_project_path(project)
+      %td= link_to 'Destroy', project, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Project', new_project_path

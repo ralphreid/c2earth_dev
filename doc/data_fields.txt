@@ -2,7 +2,7 @@
 # Core related data elements
 ###########################################################
 
-project_number_id:integer
+project_number_id:integer    # assumed unique index
 project_manager_id:integer
 structure_type_id:integer
 project_prefix_id:integer
@@ -14,6 +14,7 @@ insurance_company_id:integer
 client_id:integer
 site_id:integer
 stakeholder_id:integer
+
 
 ###########################################################
 # Core data elements

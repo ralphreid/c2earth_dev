@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Stakeholder company:
+  = @stakeholder.stakeholder_company_id
+%p
+  %b Name:
+  = @stakeholder.name
+%p
+  %b Info:
+  = @stakeholder.info
+
+= link_to 'Edit', edit_stakeholder_path(@stakeholder)
+\|
+= link_to 'Back', stakeholders_path

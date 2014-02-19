@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Takeholder company type:
+  = @stakeholder_company.takeholder_company_type_id
+%p
+  %b Company name:
+  = @stakeholder_company.company_name
+%p
+  %b Contact:
+  = @stakeholder_company.contact
+%p
+  %b Address:
+  = @stakeholder_company.address
+%p
+  %b City:
+  = @stakeholder_company.city
+%p
+  %b State:
+  = @stakeholder_company.state
+%p
+  %b Zip:
+  = @stakeholder_company.zip
+%p
+  %b Phone:
+  = @stakeholder_company.phone
+%p
+  %b Fax:
+  = @stakeholder_company.fax
+%p
+  %b Email:
+  = @stakeholder_company.email
+%p
+  %b Website:
+  = @stakeholder_company.website
+%p
+  %b Notes:
+  = @stakeholder_company.notes
+
+= link_to 'Edit', edit_stakeholder_company_path(@stakeholder_company)
+\|
+= link_to 'Back', stakeholder_companies_path

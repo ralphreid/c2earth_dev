@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Number:
+  = @site.number
+%p
+  %b Address:
+  = @site.address
+%p
+  %b City:
+  = @site.city
+%p
+  %b County:
+  = @site.county
+%p
+  %b Loc page:
+  = @site.loc_page
+%p
+  %b Loc longitude:
+  = @site.loc_longitude
+%p
+  %b Loc latitude:
+  = @site.loc_latitude
+
+= link_to 'Edit', edit_site_path(@site)
+\|
+= link_to 'Back', sites_path

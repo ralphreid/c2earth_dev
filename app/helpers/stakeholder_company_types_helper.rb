@@ -1,0 +1,2 @@
+module StakeholderCompanyTypesHelper
+end

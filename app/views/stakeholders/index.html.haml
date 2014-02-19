@@ -1,0 +1,23 @@
+%h1 Listing stakeholders
+
+%table
+  %tr
+    %th Stakeholder company
+    %th Name
+    %th Info
+    %th
+    %th
+    %th
+
+  - @stakeholders.each do |stakeholder|
+    %tr
+      %td= stakeholder.stakeholder_company_id
+      %td= stakeholder.name
+      %td= stakeholder.info
+      %td= link_to 'Show', stakeholder
+      %td= link_to 'Edit', edit_stakeholder_path(stakeholder)
+      %td= link_to 'Destroy', stakeholder, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Stakeholder', new_stakeholder_path

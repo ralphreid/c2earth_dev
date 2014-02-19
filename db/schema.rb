@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140219005806) do
+ActiveRecord::Schema.define(:version => 20140219023530) do
+
+  create_table "clients", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "work_phone"
+    t.string   "home_phone"
+    t.string   "cell_phone"
+    t.string   "fax_phone"
+    t.string   "email"
+    t.string   "address_alternate"
+    t.string   "city_alternate"
+    t.string   "state_alternate"
+    t.integer  "zip_alternate"
+    t.string   "work_phone_alternate"
+    t.string   "home_phone_alternate"
+    t.string   "cell_phone_alternate"
+    t.string   "fax_phone_alternate"
+    t.string   "email_alternate"
+    t.text     "notes"
+    t.string   "type"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "projects", :force => true do |t|
     t.integer  "project_number_id"
@@ -44,6 +70,49 @@ ActiveRecord::Schema.define(:version => 20140219005806) do
     t.text     "bad_pay_history"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+  end
+
+  create_table "sites", :force => true do |t|
+    t.string   "number"
+    t.string   "address"
+    t.string   "city"
+    t.string   "county"
+    t.text     "loc_page"
+    t.decimal  "loc_longitude", :precision => 10, :scale => 0
+    t.decimal  "loc_latitude",  :precision => 10, :scale => 0
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+  end
+
+  create_table "stakeholder_companies", :force => true do |t|
+    t.integer  "takeholder_company_type_id"
+    t.string   "company_name"
+    t.string   "contact"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "email"
+    t.text     "website"
+    t.text     "notes"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "stakeholder_company_types", :force => true do |t|
+    t.string   "takeholder_company_type"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  create_table "stakeholders", :force => true do |t|
+    t.integer  "stakeholder_company_id"
+    t.string   "name"
+    t.text     "info"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
 end

@@ -1,0 +1,41 @@
+%h1 Listing stakeholder_companies
+
+%table
+  %tr
+    %th Takeholder company type
+    %th Company name
+    %th Contact
+    %th Address
+    %th City
+    %th State
+    %th Zip
+    %th Phone
+    %th Fax
+    %th Email
+    %th Website
+    %th Notes
+    %th
+    %th
+    %th
+
+  - @stakeholder_companies.each do |stakeholder_company|
+    %tr
+      %td= stakeholder_company.takeholder_company_type_id
+      %td= stakeholder_company.company_name
+      %td= stakeholder_company.contact
+      %td= stakeholder_company.address
+      %td= stakeholder_company.city
+      %td= stakeholder_company.state
+      %td= stakeholder_company.zip
+      %td= stakeholder_company.phone
+      %td= stakeholder_company.fax
+      %td= stakeholder_company.email
+      %td= stakeholder_company.website
+      %td= stakeholder_company.notes
+      %td= link_to 'Show', stakeholder_company
+      %td= link_to 'Edit', edit_stakeholder_company_path(stakeholder_company)
+      %td= link_to 'Destroy', stakeholder_company, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Stakeholder company', new_stakeholder_company_path

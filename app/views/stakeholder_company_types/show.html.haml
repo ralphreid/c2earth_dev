@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Takeholder company type:
+  = @stakeholder_company_type.takeholder_company_type
+
+= link_to 'Edit', edit_stakeholder_company_type_path(@stakeholder_company_type)
+\|
+= link_to 'Back', stakeholder_company_types_path

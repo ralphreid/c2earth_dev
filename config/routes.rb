@@ -2,9 +2,6 @@ C2earthDev::Application.routes.draw do
   resources :faults
 
 
-  resources :sites
-
-
   resources :projects
 
 
@@ -18,9 +15,6 @@ C2earthDev::Application.routes.draw do
 
 
   resources :client_types
-
-
-  resources :structures
 
 
   resources :project_managers

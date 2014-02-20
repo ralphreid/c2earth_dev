@@ -4,8 +4,6 @@ rails g scaffold phase phase:string project_id:integer company_id:integer projec
 
 rails g scaffold project_manager name:string
 
-rails g scaffold structure_type structure_type:string
-
 rails g scaffold client_type client_type:string
 
 rails g scaffold stakeholder stakeholder_type_id:integer company_id:integer name:string client_type_id: name:string address:string city:string state:string zip:integer work_phone:string home_phone:string cell_phone:string fax_phone:string email:string address_alternate:string city_alternate:string state_alternate:string zip_alternate:integer work_phone_alternate:string home_phone_alternate:string cell_phone_alternate:string fax_phone_alternate:string email_alternate:string notes:text
@@ -18,3 +16,5 @@ rails g scaffold fault name:string
 rails g scaffold stakeholder_type stakeholder_type:string
 
 rails g scaffold site number:string structure_type_id:integer address:string city:string county:string loc_page:text loc_longitude:decimal loc_latitude:decimal apn:string tombrobox:string fault_id:integer
+
+rails g scaffold structure_type structure_type:string

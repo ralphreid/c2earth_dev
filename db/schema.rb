@@ -85,22 +85,6 @@ ActiveRecord::Schema.define(:version => 20140220012509) do
     t.datetime "updated_at",     :null => false
   end
 
-  create_table "sites", :force => true do |t|
-    t.string   "number"
-    t.integer  "structure_id"
-    t.string   "address"
-    t.string   "city"
-    t.string   "county"
-    t.text     "loc_page"
-    t.decimal  "loc_longitude", :precision => 10, :scale => 0
-    t.decimal  "loc_latitude",  :precision => 10, :scale => 0
-    t.string   "apn"
-    t.string   "tombrobox"
-    t.integer  "fault_id"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-  end
-
   create_table "stakeholder_types", :force => true do |t|
     t.string   "stakeholder_type"
     t.datetime "created_at",       :null => false
@@ -133,12 +117,6 @@ ActiveRecord::Schema.define(:version => 20140220012509) do
     t.text     "notes"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-  end
-
-  create_table "structures", :force => true do |t|
-    t.string   "structure"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
 end

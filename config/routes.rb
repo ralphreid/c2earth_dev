@@ -1,19 +1,4 @@
 C2earthDev::Application.routes.draw do
-  resources :sites
-
-
-  resources :stakeholder_company_types
-
-
-  resources :stakeholder_companies
-
-
-  resources :stakeholders
-
-
-  resources :clients
-
-
   resources :projects
   root :to => 'projects#index'
 

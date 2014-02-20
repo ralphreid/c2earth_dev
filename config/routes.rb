@@ -1,4 +1,10 @@
 C2earthDev::Application.routes.draw do
+  resources :structure_types
+
+
+  resources :sites
+
+
   resources :faults
 
 

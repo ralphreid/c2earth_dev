@@ -1,4 +1,10 @@
 ###########################################################
+# Fault
+###########################################################
+
+name:string
+
+###########################################################
 # Project Manager
 ###########################################################
 
@@ -24,7 +30,7 @@ structure_id:integer
 address:string
 city:string
 county:string
-loc_page:txt					
+loc_page:text					
 loc_longitude:decimal
 loc_latitude:decimal
 apn:string
@@ -59,6 +65,7 @@ cell_phone_alternate:string
 fax_phone_alternate:string
 email_alternate:string
 notes:text
+
 
 
 ###########################################################

@@ -5,7 +5,7 @@
 
 name:string
 name_alternate:string
-number:string
+project_num:string
 prefix_id:integer
 description:text
 

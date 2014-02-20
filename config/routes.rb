@@ -1,4 +1,34 @@
 C2earthDev::Application.routes.draw do
+  resources :faults
+
+
+  resources :sites
+
+
+  resources :projects
+
+
+  resources :stakeholder_types
+
+
+  resources :companies
+
+
+  resources :stakeholders
+
+
+  resources :client_types
+
+
+  resources :structures
+
+
+  resources :project_managers
+
+
+  resources :phases
+
+
   resources :projects
   root :to => 'projects#index'
 

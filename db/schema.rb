@@ -11,10 +11,107 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140219023530) do
+ActiveRecord::Schema.define(:version => 20140220012509) do
 
-  create_table "clients", :force => true do |t|
+  create_table "client_types", :force => true do |t|
+    t.string   "client_type"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "companies", :force => true do |t|
+    t.string   "company_name"
+    t.string   "contact"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "email"
+    t.text     "website"
+    t.text     "notes"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "faults", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "phases", :force => true do |t|
+    t.string   "phase"
+    t.integer  "project_id"
+    t.integer  "company_id"
+    t.integer  "project_manager_id"
+    t.string   "investigation_type_id"
+    t.integer  "site_id"
+    t.integer  "stakeholder_id"
+    t.text     "description"
+    t.date     "proposal_date"
+    t.string   "proposal_number"
+    t.date     "report_date"
+    t.text     "notes"
+    t.string   "insurance_policy_number"
+    t.text     "insurance_notes"
+    t.string   "Rakefile"
+    t.string   "bill_name"
+    t.string   "bill_attention"
+    t.string   "bill_address"
+    t.string   "bill_city"
+    t.string   "bill_state"
+    t.string   "bill_zip"
+    t.text     "bad_pay_history"
+    t.string   "keywords"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  create_table "project_managers", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.string   "name_alternate"
+    t.string   "number"
+    t.integer  "prefix_id"
+    t.text     "description"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "sites", :force => true do |t|
+    t.string   "number"
+    t.integer  "structure_id"
+    t.string   "address"
+    t.string   "city"
+    t.string   "county"
+    t.text     "loc_page"
+    t.decimal  "loc_longitude", :precision => 10, :scale => 0
+    t.decimal  "loc_latitude",  :precision => 10, :scale => 0
+    t.string   "apn"
+    t.string   "tombrobox"
+    t.integer  "fault_id"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+  end
+
+  create_table "stakeholder_types", :force => true do |t|
+    t.string   "stakeholder_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "stakeholders", :force => true do |t|
+    t.integer  "stakeholder_type_id"
+    t.integer  "company_id"
+    t.string   "name"
+    t.string   "client_type_id"
     t.string   "address"
     t.string   "city"
     t.string   "state"
@@ -34,85 +131,14 @@ ActiveRecord::Schema.define(:version => 20140219023530) do
     t.string   "fax_phone_alternate"
     t.string   "email_alternate"
     t.text     "notes"
-    t.string   "type"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
   end
 
-  create_table "projects", :force => true do |t|
-    t.integer  "project_number_id"
-    t.integer  "project_manager_id"
-    t.integer  "structure_type_id"
-    t.integer  "project_prefix_id"
-    t.integer  "investigation_type_id"
-    t.integer  "fault_id"
-    t.integer  "vendor_id"
-    t.integer  "client_type_id"
-    t.integer  "insurance_company_id"
-    t.integer  "client_id"
-    t.integer  "site_id"
-    t.integer  "stakeholder_id"
-    t.string   "name"
-    t.string   "name_alternate"
-    t.text     "description"
-    t.date     "proposal_date"
-    t.string   "proposal_number"
-    t.date     "report_date"
-    t.string   "notes"
-    t.string   "insurance_policy_number"
-    t.text     "insurance_notes"
-    t.string   "bill_name"
-    t.string   "bill_attention"
-    t.string   "bill_address"
-    t.string   "bill_city"
-    t.string   "bill_state"
-    t.string   "bill_zip"
-    t.text     "bad_pay_history"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
-  end
-
-  create_table "sites", :force => true do |t|
-    t.string   "number"
-    t.string   "address"
-    t.string   "city"
-    t.string   "county"
-    t.text     "loc_page"
-    t.decimal  "loc_longitude", :precision => 10, :scale => 0
-    t.decimal  "loc_latitude",  :precision => 10, :scale => 0
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-  end
-
-  create_table "stakeholder_companies", :force => true do |t|
-    t.integer  "takeholder_company_type_id"
-    t.string   "company_name"
-    t.string   "contact"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.string   "phone"
-    t.string   "fax"
-    t.string   "email"
-    t.text     "website"
-    t.text     "notes"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-  end
-
-  create_table "stakeholder_company_types", :force => true do |t|
-    t.string   "takeholder_company_type"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
-  end
-
-  create_table "stakeholders", :force => true do |t|
-    t.integer  "stakeholder_company_id"
-    t.string   "name"
-    t.text     "info"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+  create_table "structures", :force => true do |t|
+    t.string   "structure"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

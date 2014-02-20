@@ -1,4 +1,7 @@
 C2earthDev::Application.routes.draw do
+  resources :investigation_types
+
+
   resources :structure_types
 
 

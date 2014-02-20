@@ -1,0 +1,114 @@
+###########################################################
+# Fault
+###########################################################
+
+name:string
+
+###########################################################
+# Project Manager
+###########################################################
+
+name:string
+
+###########################################################
+# Structure
+###########################################################
+
+structure:string
+
+###########################################################
+# Client Type
+###########################################################
+
+client_type:string
+
+###########################################################
+# Site
+###########################################################
+number:string					
+structure_id:integer
+address:string
+city:string
+county:string
+loc_page:text					
+loc_longitude:decimal
+loc_latitude:decimal
+apn:string
+tombrobox:string
+fault_id:integer
+
+###########################################################
+# stakeholder
+###########################################################
+
+stakeholder_type_id:integer
+company_id:integer
+name:string
+client_type_id:
+name:string
+address:string
+city:string
+state:string
+zip:integer
+work_phone:string
+home_phone:string
+cell_phone:string
+fax_phone:string
+email:string
+address_alternate:string
+city_alternate:string
+state_alternate:string
+zip_alternate:integer
+work_phone_alternate:string
+home_phone_alternate:string
+cell_phone_alternate:string
+fax_phone_alternate:string
+email_alternate:string
+notes:text
+
+
+
+###########################################################
+# Company
+###########################################################
+
+company_name:string
+contact:string
+address:string
+city:string
+state:string
+zip:integer
+phone:string
+fax:string
+email:string
+website:text
+notes:text			  
+
+###########################################################
+# Stakeholder Type
+###########################################################
+
+stakeholder_type:string
+
+here is the list of company types
+	insurance
+	structural
+	civil
+	survey
+	architect
+	attorney
+	realestate buyer
+	realestate seller
+	vendor
+	KOR
+	consultant
+	client
+	++ the client type file list
+
+
+
+
+
+
+
+

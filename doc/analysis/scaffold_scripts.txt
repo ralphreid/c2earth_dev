@@ -10,7 +10,6 @@ rails g scaffold stakeholder stakeholder_type_id:integer company_id:integer name
 
 rails g scaffold company company_name:string contact:string address:string city:string state:string zip:integer phone:string fax:string email:string website:text notes:text
 
-
 rails g scaffold fault name:string
 
 rails g scaffold stakeholder_type stakeholder_type:string
